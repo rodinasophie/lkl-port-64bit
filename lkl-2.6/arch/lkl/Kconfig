@@ -1,0 +1,166 @@
+#############################################################################
+#
+# For a description of the syntax of this configuration file,
+# see Documentation/kbuild/kconfig-language.txt.
+#
+#############################################################################
+
+mainmenu "Linux Kernel Configuration"
+
+config ISA
+	bool
+	default n
+config ISAPNP
+	bool
+	default n
+config EISA
+	bool
+	default n
+config MCA
+	bool
+	default n
+config PCI
+	bool
+	default n
+config BLK_DEV_IO_TRACE
+	bool 
+	default n
+config RWSEM_GENERIC_SPINLOCK
+	bool
+	default y
+config SMP
+	bool
+	default n
+config HIGHMEM
+	bool 
+	default n
+config SPLIT_PTLOCK_CPUS
+	hex
+	default  0
+config MMU
+        bool 
+        default n	
+
+config SEMAPHORE_SLEEPERS
+        bool
+        default y
+
+config GENERIC_TIME
+        bool
+        default y
+
+config GENERIC_FIND_NEXT_BIT
+        bool 
+        default y
+
+config GENERIC_HWEIGHT
+        bool
+        default y
+
+config GENERIC_HARDIRQS 
+        bool 
+        default y
+
+config FLATMEM
+        bool
+        default y
+
+config FLAT_NODE_MEM_MAP
+        bool
+        default y
+
+config SYSFS
+        bool
+        default n
+
+config ZONE_DMA_FLAG
+        hex
+        default 0x00
+        
+config HAS_IOMEM
+        bool
+        default n
+
+config TINY_SHMEM
+	bool
+	default n
+
+config BLK_DEV_INITRD
+	bool
+	default n
+
+config GENERIC_CLOCKEVENTS
+        bool
+	default y
+
+config GENERIC_CLOCKEVENTS_BUILD
+	bool
+	default y
+
+config NO_HZ
+	bool
+	default y
+
+config TICK_ONESHOT
+	bool
+	default y
+
+config HZ
+	int
+	default 100
+
+# Define the architecture
+config LKL
+	bool
+	default y
+
+
+config FRAME_POINTER
+       bool 
+       default y
+
+choice 
+       prompt "LKL environment"
+       default LKL_ENV_NONE
+config LKL_ENV_NONE
+       bool "no pre-build environment"
+config LKL_ENV_POSIX
+       bool "POSIX"
+config LKL_ENV_NT
+       bool "Windows NT"
+config LKL_ENV_NTK
+       bool "Window NT kernel"
+config LKL_ENV_APR
+       bool "Apache Portable Runtime"
+config LKL_ENV_LINUX
+       bool "Linux"
+config LKL_ENV_HAIKU_USER
+       bool "Haiku User space"
+config LKL_ENV_HAIKU_KERNEL
+       bool "Haiku Kernel space"
+endchoice
+
+config LKL_DRV_DISK
+       bool "Disk driver"
+
+config LKL_DRV_ETH
+       bool "Ethernet driver"
+       depends on LKL_ENV_LINUX
+       depends on NET
+
+source init/Kconfig
+
+source "net/Kconfig"
+
+source "drivers/base/Kconfig"
+
+source "fs/Kconfig"
+
+source "mm/Kconfig"
+
+source "security/Kconfig"
+
+source "crypto/Kconfig"
+
+source "lib/Kconfig"
+

@@ -1,0 +1,81 @@
+arch/alpha/include/asm/atomic.h:#define atomic64_read(v)	(*(volatile long *)&(v)->counter)
+arch/alpha/include/asm/atomic.h:	c = atomic64_read(v);
+arch/arm/include/asm/atomic.h:static inline u64 atomic64_read(atomic64_t *v)
+arch/arm/include/asm/atomic.h:	__asm__ __volatile__("@ atomic64_read\n"
+arch/arm/kernel/perf_event.c:	s64 left = atomic64_read(&hwc->period_left);
+arch/arm/kernel/perf_event.c:	prev_raw_count = atomic64_read(&hwc->prev_count);
+arch/frv/include/asm/atomic.h:static inline long long atomic64_read(atomic64_t *v)
+arch/ia64/include/asm/atomic.h:#define atomic64_read(v)	(*(volatile long *)&(v)->counter)
+arch/ia64/include/asm/atomic.h:		old = atomic64_read(v);
+arch/ia64/include/asm/atomic.h:		old = atomic64_read(v);
+arch/ia64/include/asm/atomic.h:	c = atomic64_read(v);
+arch/mips/include/asm/atomic.h: * atomic64_read - read atomic variable
+arch/mips/include/asm/atomic.h:#define atomic64_read(v)	(*(volatile long *)&(v)->counter)
+arch/mips/include/asm/atomic.h:	c = atomic64_read(v);
+arch/parisc/include/asm/atomic.h:atomic64_read(const atomic64_t *v)
+arch/parisc/include/asm/atomic.h:	c = atomic64_read(v);
+arch/powerpc/include/asm/atomic.h:static __inline__ long atomic64_read(const atomic64_t *v)
+arch/powerpc/kernel/perf_event.c:		prev = atomic64_read(&event->hw.prev_count);
+arch/powerpc/kernel/perf_event.c:		prev = atomic64_read(&event->hw.prev_count);
+arch/powerpc/kernel/perf_event.c:			left = atomic64_read(&event->hw.period_left);
+arch/powerpc/kernel/perf_event.c:	prev = atomic64_read(&event->hw.prev_count);
+arch/powerpc/kernel/perf_event.c:	left = atomic64_read(&event->hw.period_left) - delta;
+arch/powerpc/kernel/perf_event_fsl_emb.c:		prev = atomic64_read(&event->hw.prev_count);
+arch/powerpc/kernel/perf_event_fsl_emb.c:		s64 left = atomic64_read(&event->hw.period_left);
+arch/powerpc/kernel/perf_event_fsl_emb.c:	prev = atomic64_read(&event->hw.prev_count);
+arch/powerpc/kernel/perf_event_fsl_emb.c:	left = atomic64_read(&event->hw.period_left) - delta;
+arch/s390/include/asm/atomic.h:static inline long long atomic64_read(const atomic64_t *v)
+arch/s390/include/asm/atomic.h:static inline long long atomic64_read(const atomic64_t *v)
+arch/s390/include/asm/atomic.h:		old = atomic64_read(v);
+arch/s390/include/asm/atomic.h:		old = atomic64_read(v);
+arch/s390/include/asm/atomic.h:		old = atomic64_read(v);
+arch/s390/include/asm/atomic.h:		old = atomic64_read(v);
+arch/s390/include/asm/atomic.h:	c = atomic64_read(v);
+arch/s390/include/asm/atomic.h:	c = atomic64_read(v);
+arch/sh/kernel/perf_event.c:	prev_raw_count = atomic64_read(&hwc->prev_count);
+arch/sparc/include/asm/atomic_64.h:#define atomic64_read(v)	(*(volatile long *)&(v)->counter)
+arch/sparc/include/asm/atomic_64.h:	c = atomic64_read(v);
+arch/sparc/kernel/perf_event.c:	prev_raw_count = atomic64_read(&hwc->prev_count);
+arch/sparc/kernel/perf_event.c:	s64 left = atomic64_read(&hwc->period_left);
+arch/x86/include/asm/atomic64_32.h: * atomic64_read - read atomic64 variable
+arch/x86/include/asm/atomic64_32.h:static inline long long atomic64_read(atomic64_t *v)
+arch/x86/include/asm/atomic64_64.h: * atomic64_read - read atomic64 variable
+arch/x86/include/asm/atomic64_64.h:static inline long atomic64_read(const atomic64_t *v)
+arch/x86/include/asm/atomic64_64.h:	c = atomic64_read(v);
+arch/x86/include/asm/atomic64_64.h:	c = atomic64_read(v);
+arch/x86/kernel/cpu/perf_event.c:	prev_raw_count = atomic64_read(&hwc->prev_count);
+arch/x86/kernel/cpu/perf_event.c:	s64 left = atomic64_read(&hwc->period_left);
+arch/x86/kernel/pvclock.c:	last = atomic64_read(&last_value);
+arch/x86/lib/atomic64_32.c:long long atomic64_read_cx8(long long, const atomic64_t *v);
+arch/x86/lib/atomic64_32.c:EXPORT_SYMBOL(atomic64_read_cx8);
+arch/x86/lib/atomic64_32.c:long long atomic64_read_386(long long, const atomic64_t *v);
+arch/x86/lib/atomic64_32.c:EXPORT_SYMBOL(atomic64_read_386);
+arch/x86/lib/atomic64_cx8_32.S:ENTRY(atomic64_read_cx8)
+arch/x86/lib/atomic64_cx8_32.S:ENDPROC(atomic64_read_cx8)
+drivers/acpi/apei/cper.c:	if (!atomic64_read(&seq))
+include/asm-generic/atomic64.h:extern long long atomic64_read(const atomic64_t *v);
+include/asm-generic/atomic-long.h~:	return (long)atomic64_read(v);
+include/asm-generic/atomic-long.h:	return (long)atomic64_read(v);
+kernel/perf_event.c:	value = atomic64_read(&next_event->count);
+kernel/perf_event.c:	if (atomic64_read(&hwc->period_left) > 8*sample_period) {
+kernel/perf_event.c:		now = atomic64_read(&event->count);
+kernel/perf_event.c:	return atomic64_read(&event->count);
+kernel/perf_event.c:			atomic64_read(&event->child_total_time_enabled);
+kernel/perf_event.c:			atomic64_read(&event->child_total_time_running);
+kernel/perf_event.c:	userpg->offset = atomic64_read(&event->count);
+kernel/perf_event.c:		userpg->offset -= atomic64_read(&event->hw.prev_count);
+kernel/perf_event.c:			atomic64_read(&event->child_total_time_enabled);
+kernel/perf_event.c:			atomic64_read(&event->child_total_time_running);
+kernel/perf_event.c:	values[n++] = atomic64_read(&event->count);
+kernel/perf_event.c:			atomic64_read(&event->child_total_time_enabled);
+kernel/perf_event.c:			atomic64_read(&event->child_total_time_running);
+kernel/perf_event.c:	values[n++] = atomic64_read(&leader->count);
+kernel/perf_event.c:		values[n++] = atomic64_read(&sub->count);
+kernel/perf_event.c:	old = val = atomic64_read(&hwc->period_left);
+kernel/perf_event.c:	child_val = atomic64_read(&child_event->count);
+kernel/trace/trace_ksym.c:			   (unsigned long long)atomic64_read(&entry->counter));
+lib/atomic64.c:long long atomic64_read(const atomic64_t *v)
+lib/atomic64.c:EXPORT_SYMBOL(atomic64_read);
+lib/atomic64_test.c:	BUG_ON(atomic64_read(&v) != r);
+net/rds/ib_recv.c:	return atomic64_read(&ic->i_ack_next);
+net/rds/iw_recv.c:	return atomic64_read(&ic->i_ack_next);
