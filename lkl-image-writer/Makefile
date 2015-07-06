@@ -16,7 +16,7 @@ CFLAGS_LIN=$(shell --includes --cppflags)
 #CFLAGS_OS=$(CFLAGS_LIN)
 
 HERE=$(PWD)
-LINUX=$(HERE)/../lkl-linux-2.6
+LINUX=$(HERE)/../lkl-2.6
 
 SRCS=$(shell ls *.c)
 OBJS=$(patsubst %.c,%.o,$(SRCS))
